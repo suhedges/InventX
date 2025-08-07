@@ -1,10 +1,27 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Layout from '@/Layout'
+import Dashboard from '@/pages/Dashboard'
+import Products from '@/pages/Products'
+import Scanner from '@/pages/Scanner'
+import Import from '@/pages/Import'
+import Export from '@/pages/Export'
+import MassAssignment from '@/pages/MassAssignment'
 
 export default function App() {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">InventoryPro</h1>
-      <p>Replace this placeholder with your application components.</p>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/scanner" element={<Scanner />} />
+          <Route path="/import" element={<Import />} />
+          <Route path="/export" element={<Export />} />
+          <Route path="/massassignment" element={<MassAssignment />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
