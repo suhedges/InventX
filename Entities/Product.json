@@ -1,0 +1,65 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "internal_name": {
+      "type": "string",
+      "description": "Internal product name"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer-facing product name"
+    },
+    "min_quantity": {
+      "type": "number",
+      "description": "Minimum stock level"
+    },
+    "max_quantity": {
+      "type": "number",
+      "description": "Maximum stock level"
+    },
+    "current_quantity": {
+      "type": "number",
+      "description": "Current stock quantity"
+    },
+    "bin_location": {
+      "type": "string",
+      "description": "Warehouse bin location"
+    },
+    "upc_code": {
+      "type": "string",
+      "description": "Assigned UPC barcode"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "electronics",
+        "apparel",
+        "home",
+        "beauty",
+        "sports",
+        "automotive",
+        "books",
+        "toys",
+        "food",
+        "other"
+      ],
+      "default": "other",
+      "description": "Product category"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "discontinued"
+      ],
+      "default": "active",
+      "description": "Product status"
+    }
+  },
+  "required": [
+    "internal_name",
+    "bin_location"
+  ]
+}
